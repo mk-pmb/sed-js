@@ -1,0 +1,35 @@
+{ "name": "sed",
+  "version": "0.1.0",
+  "description": "Embrace and extend GNU sed, the stream editor for filtering and transforming text.",
+  "keywords": [
+    "regexp",
+    "sed",
+    "stream"
+  ],
+
+  "author": "M.K. (https://github.com/mk-pmb)",
+  "homepage": "https://github.com/mk-pmb/sed-js/#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mk-pmb/sed-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mk-pmb/sed-js/issues"
+  },
+  "contributors": [
+  ],
+
+  "private": false, "license": "ISC",
+
+  "main": "sed.mjs",
+  "bin": { "node-sed": "bin/node-sed.sh" },
+  "scripts": { "test": "nodemjs test/all.mjs" },
+  "directories": { "test": "test" },
+
+  "dependencies": {},
+  "devDependencies": {
+  },
+
+
+  "npm vs. BOM = Unexpected token": "-*- coding: UTF-8 -*-"
+}
