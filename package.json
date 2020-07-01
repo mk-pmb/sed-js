@@ -21,13 +21,17 @@
 
   "private": false, "license": "ISC",
 
-  "main": "sed.mjs",
-  "bin": { "node-sed": "bin/node-sed.sh" },
-  "scripts": { "test": "nodemjs test/all.mjs" },
+  "main": "sed.js",
+  "bin": { "node-sed": "bin/node-sed.js" },
+  "scripts": { "test": "node test/all.js" },
   "directories": { "test": "test" },
 
-  "dependencies": {},
+  "dependencies": {
+    "esmod-pmb": "^0.1.11",
+    "p-fatal": "^0.1.3"
+  },
   "devDependencies": {
+    "usnam-pmb": "^0.2.4"
   },
 
 

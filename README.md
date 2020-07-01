@@ -22,6 +22,14 @@ text.
 
 &nbsp;
 
+
+CLI
+---
+
+See [docs/cli/](docs/cli/).
+
+
+
 API
 ---
 
@@ -58,18 +66,11 @@ If `input` is…
 
 ### .parse(script)
 
-Parse a string `script`.
+Parse sed commands from string `script`.
 Returns a promise for an opaque truthy value that represents the parse tree.
 The only purpose of exposing the parse tree is so that you can reuse it
-for multiple invocations of `.transform`.
-
-* __⚠__ "opaque" means __DO NOT rely__ on assumptions about its data format,
-  as it is subject to change at any time¹, especially in patch releases.
-
-<small>
-¹ Format changes at runtime are guaranteed to be forward-compatible for
-  the duration of execution. ;-)
-</small>
+for multiple invocations of `.transform`,
+so avoid relying on its internal structure in any way.
 
 
 
