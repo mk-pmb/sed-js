@@ -10,6 +10,8 @@ text.
 <!--/#echo -->
 
 
+&nbsp;
+
 -----
 -----
 ### Stability: Alpha preview
@@ -18,6 +20,7 @@ text.
 
 
 
+&nbsp;
 
 API
 ---
@@ -26,13 +29,13 @@ This module ESM-exports an object with these methods:
 
 ### .cli(args)
 
-Interpret the [CLI options](docs/cli/) given in array `args`.
+Interpret the [CLI arguments](docs/cli/) given in array `args`.
 Returns a promise for completion.
 
-* __NB:__ While I try to keep the script syntax mostly compatible with
-  [GNU sed](https://www.gnu.org/software/sed/),
-  the CLI options [are very different](docs/cli/)!
-  If you need a CLI tool with same CLI syntax as the original GNU sed,
+* __⚠__ While I try to keep the [script syntax](docs/script_syntax/)
+  mostly compatible with [GNU sed](https://www.gnu.org/software/sed/),
+  the CLI arguments [are very different](docs/cli/).
+  If you need a tool with same CLI arguments as the original GNU sed,
   please use GNU sed.
 
 
@@ -60,7 +63,7 @@ Returns a promise for an opaque truthy value that represents the parse tree.
 The only purpose of exposing the parse tree is so that you can reuse it
 for multiple invocations of `.transform`.
 
-* NB: "opaque" means __DO NOT rely__ on assumptions about its data format,
+* __⚠__ "opaque" means __DO NOT rely__ on assumptions about its data format,
   as it is subject to change at any time¹, especially in patch releases.
 
 <small>
