@@ -13,7 +13,7 @@ node-sed CLI
 Usage
 -----
 
-`node-sed command[ command[ command[ …]]]`
+`node-sed command [command […]] [-- inputFile [inputFile […]]]`
 
 
 State
@@ -27,20 +27,28 @@ described as the _state_ in the [script syntax docs](../script syntax/).
 CLI commands
 ------------
 
+* `--` –
+  Treat all remaining CLI arguments as if they were prefixed with `tr:file:`.
 * `init` –
   Reset all state to its defaults.
 * `set:NAME:VALUE` –
   Set _setting_ `NAME` to `VALUE`.
-* `scFile:FILENAME` –
+* `sc:file:FILENAME` –
   Add script commands from text file `FILENAME` to the CPT.
-* `scArg:CODE` –
+* `sc:arg:CODE` –
   Add script commands from literal script code `CODE` to the CPT.
-* `trFile:FILENAME` –
+* `sc:cmd:LCMD` –
+  Add a single lCmd from literal script code `CODE` to the CPT.
+* `tr:file:FILENAME` –
   Read the content from text file `FILENAME` and transform it.
-* `trArg:TEXT` –
+  * If the `outFileSubst` setting is not empty, first use that to
+    calculate the output filename and set output target to that file.
+    `outFileSubst` is expected to contain exactly two U+003A colon characters,
+    dividing it into `body:template:flags`.
+    These which will be used for a native JavaScript RegExp replace,
+    so your template must use JS syntax, not sed.
+* `tr:arg:TEXT` –
   Transform the literal input text `TEXT`.
-
-
 
 
 

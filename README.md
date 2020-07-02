@@ -50,8 +50,8 @@ Returns a promise for completion.
 
 ### .transform(state[, input])
 
-Transform text according to `state`, which should be an object with only
-one property `parseTree`, whose value should be the result of `.parse`-ing
+Transform text according to `state`, which should be an object with a
+property `parseTree`, whose value should be the result of `.parse`-ing
 a sed script.
 
 If `input` is…
@@ -62,15 +62,25 @@ If `input` is…
 * a buffer, it will be converted to a string using node's default encoding,
   then processes as if that string was given.
 
+In addition to the mandatory `parseTree` property, `state` may contain
+any of these optional properties:
+
+* `prFs`: An object with an interface similar to the
+  [Node.js fs Promises API](https://nodejs.org/docs/latest/api/fs.html).
+  Providing it will enable script commands that need file system access.
 
 
-### .parse(script)
 
-Parse sed commands from string `script`.
-Returns a promise for an opaque truthy value that represents the parse tree.
+### .parse(script[, grow])
+
+Parse sed commands from string `script`. Returns a promise for an opaque
+truthy value that represents the resulting parse tree.
 The only purpose of exposing the parse tree is so that you can reuse it
 for multiple invocations of `.transform`,
 so avoid relying on its internal structure in any way.
+
+If `grow` is provided, it is expected to be an existing parse tree,
+and that one will be extended in-place rather than creating a new one.
 
 
 
