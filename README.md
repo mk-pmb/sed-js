@@ -14,7 +14,14 @@ text.
 
 -----
 -----
+
 ### Stability: Alpha preview
+
+* Some parts seem to somewhat work already.
+* The transform part is currently hard-coded to the equivalent of
+  `sed -re 's~^~>> ~;s~$~ <<~;$a done.'`
+* Uploading to npm anyway in order to announce the new repository.
+
 -----
 -----
 
@@ -35,7 +42,7 @@ API
 
 This module ESM-exports an object with these methods:
 
-### .cli(args)
+### .cliMain(args)
 
 Interpret the [CLI arguments](docs/cli/) given in array `args`.
 Returns a promise for completion.
@@ -60,7 +67,7 @@ If `input` is…
   you can pipe your text into.
 * a string, return a promise for the transformed stream.
 * a buffer, it will be converted to a string using node's default encoding,
-  then processes as if that string was given.
+  then processed as if that string was given.
 
 In addition to the mandatory `parseTree` property, `state` may contain
 any of these optional properties:

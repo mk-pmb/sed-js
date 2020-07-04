@@ -49,6 +49,8 @@ CLI commands
     so your template must use JS syntax, not sed.
 * `tr:arg:TEXT` –
   Transform the literal input text `TEXT`.
+* `tr:stdin` –
+  Transform standard input.
 
 
 

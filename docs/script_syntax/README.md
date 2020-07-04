@@ -29,6 +29,9 @@ It consists of these parts:
   is text that has been read but not released yet,
   much like the "pattern space" in GNU sed.
 
+* The __input line counter (inLnCnt)__
+  counts how many lines of input have been read.
+
 * The __alternate buffer (altBuf)__
   is another buffer,
   much like the "hold space" in GNU sed.
@@ -57,20 +60,20 @@ It consists of these parts:
 Further definitions
 -------------------
 
-* The _command scope_
+* The __command scope__
   is the text that forms one command.
   It currently reaches to the end of the line.
 
-* A _virtual command string (vCmd)_
+* A __virtual command string (vCmd)__
   is a sequence of zero or more characters that can be executed as if each
   of its characters were an upcoming command node in the CPT, with the
   command denoted by that character. (Thus, it is limited to only cCmd.)
 
-* A _single character command (cCmd)_
+* A __single character command (cCmd)__
   is a command whose name is just one character.
   Some of them can have one or more arguments.
 
-* A _long command (lCmd)_
+* A __long command (lCmd)__
   is a command whose name has multiple characters.
 
 
